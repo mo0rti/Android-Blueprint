@@ -1,0 +1,16 @@
+package com.mortitech.blueprint.template.ui.feature.{{className}}
+
+import com.mortitech.blueprint.foundation.architecture.mvi.ViewAction
+
+/**
+ * View actions which can be sent from View to ViewModel.
+ */
+sealed class {{ClassName}}ViewAction : ViewAction {
+    data class FieldChanged(val fieldType: {{ClassName}}FieldType, val value: Any) : {{ClassName}}ViewAction()
+    data object SubmitClicked : {{ClassName}}ViewAction()
+    // Add the rest of the view actions based on your screen needs
+}
+
+enum class {{ClassName}}FieldType {
+    {{EnumFields}}
+}

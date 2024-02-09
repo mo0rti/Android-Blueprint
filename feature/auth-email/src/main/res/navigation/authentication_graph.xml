@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_graph"
+    app:startDestination="@id/navigation_sign_in">
+
+    <fragment
+        android:id="@+id/navigation_sign_in"
+        android:name="com.mortitech.blueprint.feature.auth.email.signin.SignInFragment"
+        android:label="@string/title_signin"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/navigation_sign_up" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_sign_up"
+        android:name="com.mortitech.blueprint.feature.auth.email.signup.SignUpFragment"
+        android:label="@string/title_signup"
+        tools:layout="@layout/fragment_sign_up" />
+</navigation>

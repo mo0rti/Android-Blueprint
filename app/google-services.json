@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "155620900744",
+    "project_id": "si-template-c2577",
+    "storage_bucket": "si-template-c2577.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155620900744:android:d62225ea6137cd6be0843d",
+        "android_client_info": {
+          "package_name": "com.mortitech.blueprint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155620900744-91sn0br6j9a64ftrcmrq127ns04qhpec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_CaVd3_xjgiMLd5YTeqcwb_8kHKk7cVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155620900744-91sn0br6j9a64ftrcmrq127ns04qhpec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155620900744:android:d0191c0122791697e0843d",
+        "android_client_info": {
+          "package_name": "com.mortitech.blueprint.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155620900744-91sn0br6j9a64ftrcmrq127ns04qhpec.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_CaVd3_xjgiMLd5YTeqcwb_8kHKk7cVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155620900744-91sn0br6j9a64ftrcmrq127ns04qhpec.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

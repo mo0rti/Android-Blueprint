@@ -1,0 +1,22 @@
+package com.mortitech.blueprint.network.service.{{className}}
+
+import com.mortitech.blueprint.network.dto.{{ClassName}}Dto
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
+
+/**
+ * API service interface for {{ClassName}} related network operations.
+ */
+interface {{ClassName}}Api {
+
+    @GET("/api/{{className}}/all")
+    suspend fun getAll{{ClassNamePlural}}(): List<{{ClassName}}Dto>
+
+    @POST("/api/{{className}}/create")
+    suspend fun save{{ClassName}}(
+        @Header("Authorization") authToken: String,
+        @Body dto: {{ClassName}}Dto
+    )
+}

@@ -1,0 +1,55 @@
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+variables:
+- group: TeamVars.TEMPLATE - Android
+
+pool:
+  name: 'Private Pool Mobile'
+  demands:
+    - Agent.OS -equals Linux
+
+jobs:
+  - job: AssembleAndTestReleaseJob
+    displayName: Release Build
+    steps:
+    - task: DownloadSecureFile@1
+      name: googlePlayServices
+      displayName: 'Download Google play services file'
+      inputs:
+        secureFile: 'template-android-release-google-services.json'
+
+    - bash: |
+        cd app/src/
+        mkdir release
+      displayName: 'Create build Directory'
+
+    - bash: 'mv $(googlePlayServices.secureFilePath) ./app/src/release/google-services.json'
+      displayName: 'Copy Google play services file into project'
+
+    - task: DownloadSecureFile@1
+      name: releaseKeystore
+      displayName: 'Download Keystore to upload to Google Play'
+      inputs:
+        secureFile: 'TEMPLATE-google-play-upload.keystore'
+
+    - bash: |
+        ./gradlew assembleRelease
+      displayName: Assemble
+      env:
+        KEY_STORE_PATH: $(releaseKeystore.secureFilePath)
+        RELEASE_STORE_PASSWORD: $(RELEASE_KEY_PASSWORD)
+        RELEASE_KEY_ALIAS: $(RELEASE_KEY_ALIAS)
+        RELEASE_KEY_PASSWORD: $(RELEASE_KEY_PASSWORD)
+        BUILDER_USER: $(BUILDER_USER)
+        BUILDER_PASSWORD: $(BUILDER_PASSWORD)
+        JAVA_HOME: $(JAVA_HOME_17)
+        PATH: $(JAVA_HOME_17)/bin:$(PATH)
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: "app/build/outputs"
+        artifactName: Release-Build
+      displayName: Publish Artifact

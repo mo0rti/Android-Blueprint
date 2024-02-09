@@ -1,0 +1,55 @@
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: none
+
+variables:
+- group: TeamVars.TEMPLATE - Android
+
+pool:
+  name: 'Private Pool Mobile'
+  demands:
+    - Agent.OS -equals Linux
+
+jobs:
+  - job: AssembleAndTestAcceptanceJob
+    displayName: Acceptance Build
+    steps:
+    - task: DownloadSecureFile@1
+      name: googlePlayServices
+      displayName: 'Download Google play services file'
+      inputs:
+        secureFile: 'template-android-acceptance-google-services.json'
+
+
+    - bash: |
+        cd app/src/
+        mkdir acceptance
+      displayName: 'Create build Directory'
+
+    - bash: 'mv $(googlePlayServices.secureFilePath) ./app/src/acceptance/google-services.json'
+      displayName: 'Copy Google play services file into project'
+
+    - bash: |
+        ./gradlew assembleAcceptance
+      displayName: Assemble
+      env:
+        BUILDER_USER: $(BUILDER_USER)
+        BUILDER_PASSWORD: $(BUILDER_PASSWORD)
+        JAVA_HOME: $(JAVA_HOME_17)
+        PATH: $(JAVA_HOME_17)/bin:$(PATH)
+
+    - bash: |
+        ./gradlew -Pci --console=plain :app:testAcceptanceUnitTest
+      displayName: Test
+      env:
+        BUILDER_USER: $(BUILDER_USER)
+        BUILDER_PASSWORD: $(BUILDER_PASSWORD)
+        JAVA_HOME: $(JAVA_HOME_17)
+        PATH: $(JAVA_HOME_17)/bin:$(PATH)
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: "app/build/outputs"
+        artifactName: Acceptance-Build
+      displayName: Publish Artifacts

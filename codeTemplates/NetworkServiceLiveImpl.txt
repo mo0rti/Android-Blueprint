@@ -1,0 +1,23 @@
+package com.mortitech.blueprint.network.service.{{className}}
+
+import com.mortitech.blueprint.network.dto.{{ClassName}}Dto
+import com.mortitech.blueprint.model.{{ClassName}}
+
+/**
+ * Live implementation of the {{ClassName}}NetworkService that interacts with a real network API.
+ */
+class {{ClassName}}NetworkServiceLiveImpl(
+    private val api: {{ClassName}}Api
+) : {{ClassName}}NetworkService {
+
+    override suspend fun get{{ClassNamePlural}}(): List<{{ClassName}}> {
+        return api.getAll{{ClassNamePlural}}().map { it.toDomainModel() }
+    }
+
+    override suspend fun save{{ClassName}}({{className}}: {{ClassName}}) {
+        api.save{{ClassName}}(
+            authToken = "Auth token",
+            dto = {{ClassName}}Dto.from{{ClassName}}({{className}})
+        )
+    }
+}

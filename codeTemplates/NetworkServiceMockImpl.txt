@@ -1,0 +1,22 @@
+package com.mortitech.blueprint.network.service.{{className}}
+
+import android.util.Log
+import com.mortitech.blueprint.model.{{ClassName}}
+import kotlinx.coroutines.delay
+
+/**
+ * Mock implementation of the {{ClassName}}NetworkService for testing purposes.
+ */
+class {{ClassName}}NetworkServiceMockImpl : {{ClassName}}NetworkService {
+
+    override suspend fun get{{ClassNamePlural}}(): List<{{ClassName}}> {
+        // TODO: Return a mock list of {{ClassName}} entities
+        return emptyList()
+    }
+
+    override suspend fun save{{ClassName}}({{className}}: {{ClassName}}) {
+        // Handle the save operation in a way suitable for testing
+        delay(2000L)
+        Log.d("{{ClassName}}NetworkServiceMockImpl", "save: ${{className}}")
+    }
+}

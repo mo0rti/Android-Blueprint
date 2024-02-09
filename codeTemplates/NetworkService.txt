@@ -1,0 +1,23 @@
+package com.mortitech.blueprint.network.service.{{className}}
+
+import com.mortitech.blueprint.model.{{ClassName}}
+
+/**
+ * Network service interface for fetching and sending {{ClassName}} data.
+ */
+interface {{ClassName}}NetworkService {
+
+    /**
+     * Fetches all {{ClassName}} entities from the network.
+     *
+     * @return A list of {{ClassName}} entities.
+     */
+    suspend fun get{{ClassNamePlural}}(): List<{{ClassName}}>
+
+    /**
+     * Sends an instance of {{ClassName}} to the network to be saved.
+     *
+     * @param {{className}} The instance of {{ClassName}} to be sent.
+     */
+    suspend fun save{{ClassName}}({{className}}: {{ClassName}})
+}

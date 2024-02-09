@@ -1,0 +1,23 @@
+package com.mortitech.blueprint.data.repository.{{className}}
+
+import com.mortitech.blueprint.model.{{ClassName}}
+import com.mortitech.blueprint.network.service.{{className}}.{{ClassName}}NetworkService
+
+/**
+ * The implementation of the {{ClassName}}Repository.
+ *
+ * This class handles data operations, providing a bridge between the domain
+ * layer and data layer, using a network service to fetch and store data.
+ */
+class {{ClassName}}RepositoryImpl(
+    private val networkService: {{ClassName}}NetworkService
+) : {{ClassName}}Repository {
+
+    override suspend fun getAll{{ClassNamePlural}}(): List<{{ClassName}}> {
+        return networkService.get{{ClassNamePlural}}()
+    }
+
+    override suspend fun save{{ClassName}}({{className}}: {{ClassName}}) {
+        networkService.save{{ClassName}}({{className}})
+    }
+}

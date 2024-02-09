@@ -1,0 +1,47 @@
+package com.mortitech.blueprint.template.ui.feature.{{className}}
+
+import androidx.lifecycle.viewModelScope
+import com.mortitech.blueprint.model.{{ClassName}}
+import com.mortitech.blueprint.data.repository.{{className}}.{{ClassName}}Repository
+import com.mortitech.blueprint.foundation.architecture.mvi.MviViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.launch
+
+@HiltViewModel
+class {{ClassName}}ViewModel @Inject constructor(
+    private val repository: {{ClassName}}Repository
+) : MviViewModel<{{ClassName}}ViewState, {{ClassName}}ViewAction, {{ClassName}}ViewEvent>() {
+
+    override fun processViewActions(action: {{ClassName}}ViewAction) {
+        when (action) {
+            is {{ClassName}}ViewAction.FieldChanged -> {
+                when (action.fieldType) {
+                    {{FieldCases}}
+                }
+            }
+            is {{ClassName}}ViewAction.SubmitClicked -> {
+                submitForm()
+            }
+        }
+    }
+
+    override fun initViewState() = {{ClassName}}ViewState()
+
+    private fun submitForm() {
+        viewModelScope.launch {
+            try {
+                updateViewState { copy(isLoading = true) }
+                val model = {{ClassName}}(
+                    {{PropertyAssignments}}
+                )
+                repository.save{{ClassName}}(model)
+                updateViewEvent({{ClassName}}ViewEvent.Success)
+            } catch (e: Exception) {
+                updateViewEvent({{ClassName}}ViewEvent.ShowError(e.message ?: "Unknown error"))
+            } finally {
+                updateViewState { copy(isLoading = false) }
+            }
+        }
+    }
+}

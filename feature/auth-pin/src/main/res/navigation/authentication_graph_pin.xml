@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_graph_pin"
+    app:startDestination="@id/navigation_sign_in_pin">
+
+    <fragment
+        android:id="@+id/navigation_sign_in_pin"
+        android:name="com.mortitech.blueprint.feature.auth.pin.signin.SignInFragment"
+        android:label="@string/title_signin"
+        tools:layout="@layout/fragment_sign_in_pin" >
+    </fragment>
+
+</navigation>

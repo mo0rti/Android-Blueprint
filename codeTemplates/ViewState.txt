@@ -1,0 +1,12 @@
+package com.mortitech.blueprint.template.ui.feature.{{className}}
+
+import com.mortitech.blueprint.foundation.architecture.mvi.ViewState
+
+/**
+ * View state to hold the different states of the view.
+ */
+data class {{ClassName}}ViewState(
+    val isLoading: Boolean = false,
+    {{ViewStateFields}},
+    // Add the rest of the view states here, customize based on your screen needs
+) : ViewState

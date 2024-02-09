@@ -1,0 +1,83 @@
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger: 
+  batch: true
+  branches:
+    include:
+      - develop
+
+name: $(Rev:r)
+
+variables:
+- group: TeamVars.TEMPLATE - Android
+- group: TeamVars.TEMPLATE
+
+pool:
+  name: 'Private Pool Mobile'
+  demands:
+    - Agent.OS -equals Linux
+
+jobs:
+  - job: AssembleAndTestDebugJob
+    displayName: 'Debug Build'
+    steps:
+
+    - task: DownloadSecureFile@1
+      name: googlePlayServices
+      displayName: 'Download Google play services file'
+      inputs:
+        secureFile: 'template-android-debug-google-services.json'
+
+    - bash: 'mv $(googlePlayServices.secureFilePath) ./app/google-services.json'
+      displayName: 'Copy Google play services file into project'
+
+    - task: SonarQubePrepare@4
+      displayName: 'SonarQube: Prepare'
+      inputs:
+        SonarQube: '$(Application_Acronym)-sonarqube-p-sc'
+        scannerMode: 'Other'
+        configMode: manual    
+
+    - bash: |
+        ./gradlew --console=plain --quiet assembleDebug
+      displayName: 'Assemble'
+      env:
+        BUILDER_USER: $(BUILDER_USER)
+        BUILDER_PASSWORD: $(BUILDER_PASSWORD)
+        JAVA_HOME: $(JAVA_HOME_17)
+        PATH: $(JAVA_HOME_17)/bin:$(PATH)
+
+    - bash: |
+        ./gradlew --console=plain --quiet :app:testDebugUnitTest
+      displayName: 'Unit Test'
+      env:
+        BUILDER_USER: $(BUILDER_USER)
+        BUILDER_PASSWORD: $(BUILDER_PASSWORD)
+        JAVA_HOME: $(JAVA_HOME_17)
+        PATH: $(JAVA_HOME_17)/bin:$(PATH)
+
+    - bash: |
+        ./gradlew --console=plain --quiet sonar
+      displayName: 'SonarQube: Analyze'
+      env:
+        BUILDER_USER: $(BUILDER_USER)
+        BUILDER_PASSWORD: $(BUILDER_PASSWORD)
+        JAVA_HOME: $(JAVA_HOME_17)
+        PATH: $(JAVA_HOME_17)/bin:$(PATH)
+
+    - task: SonarQubePublish@4
+      displayName: 'SonarQube: Publish'
+      inputs:
+        pollingTimeoutSec: '300'
+
+    - task: sonar-buildbreaker@8
+      displayName: 'SonarQube: Build Breaker'
+      inputs:
+        SonarQube: '$(Application_Acronym)-sonarqube-p-sc'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: "app/build/outputs"
+        artifactName: Debug-Build
+      displayName: 'Publish Artifacts'

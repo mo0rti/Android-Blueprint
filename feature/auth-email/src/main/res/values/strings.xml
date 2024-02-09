@@ -1,0 +1,4 @@
+<resources>
+    <string name="title_signin">Login</string>
+    <string name="title_signup">Create new account</string>
+</resources>

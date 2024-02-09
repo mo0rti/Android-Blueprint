@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="abn_si_pinpad_background">#E6E6E6</color>
+
+    <color name="abn_si_pinpad_button_normal">#FFFFFFFF</color>
+    <color name="abn_si_pinpad_button_pressed">#CCCCCC</color>
+    <color name="abn_si_pinpad_button_text">#999999</color>
+
+    <color name="abn_si_pinpad_number">#222222</color>
+
+</resources>

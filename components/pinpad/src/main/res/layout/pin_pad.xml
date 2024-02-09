@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/abn_si_pinpad_background"
+    android:orientation="vertical"
+    android:padding="@dimen/abn_si_spacing_small_x">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:drawable="@drawable/ic_number_1"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/abn_si_spacing_small_x"
+            android:text="ABC"
+            android:drawable="@drawable/ic_number_2"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="DEF"
+            android:drawable="@drawable/ic_number_3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/abn_si_spacing_small_x"
+        android:weightSum="3">
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="GHI"
+            android:drawable="@drawable/ic_number_4"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/abn_si_spacing_small_x"
+            android:text="JKL"
+            android:drawable="@drawable/ic_number_5"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="MNO"
+            android:drawable="@drawable/ic_number_6"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/abn_si_spacing_small_x"
+        android:weightSum="3">
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="PQRS"
+            android:drawable="@drawable/ic_number_7"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin8"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/abn_si_spacing_small_x"
+            android:text="TUV"
+            android:drawable="@drawable/ic_number_8"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin9"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="WXYZ"
+            android:drawable="@drawable/ic_number_9"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/abn_si_spacing_small_x"
+        android:weightSum="3">
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPinBio"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:drawable="@drawable/ic_finger_print"/>
+
+        <View
+            android:id="@id/vAbnTechBtnEmptySpace"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/abn_si_numeric_pad_height" />
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPin0"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/abn_si_spacing_small_x"
+            android:text="TUV"
+            android:drawable="@drawable/ic_number_0"/>
+
+        <com.mortitech.blueprint.pin.PinPadButton
+            style="@style/AbnSi.PinPad.Button"
+            android:id="@id/btnAbnTechPinDel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:drawable="@drawable/ic_number_del" />
+
+    </LinearLayout>
+
+</LinearLayout>

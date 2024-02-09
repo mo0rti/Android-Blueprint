@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abn_si_default_content_padding">16dp</dimen>
+
+    <dimen name="abn_si_button_radius">4dp</dimen>
+
+    <dimen name="abn_si_spacing_small_x">4dp</dimen>
+    <dimen name="abn_si_spacing_small">8dp</dimen>
+    <dimen name="abn_si_spacing_medium">12dp</dimen>
+    <dimen name="abn_si_spacing_large">16dp</dimen>
+    <dimen name="abn_si_spacing_large_x">20dp</dimen>
+
+    <dimen name="abn_si_numeric_pad_width">120dp</dimen>
+    <dimen name="abn_si_numeric_pad_height">54dp</dimen>
+
+    <dimen name="abn_si_font_size_small">8sp</dimen>
+    <dimen name="abn_si_font_size_medium">16sp</dimen>
+
+</resources>

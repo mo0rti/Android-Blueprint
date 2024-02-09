@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AbnSi" />
+
+    <style name="AbnSi.PinPad" />
+
+    <style name="AbnSi.PinPad.Button">
+        <item name="android:background">@color/abn_si_pinpad_button_normal</item>
+        <item name="android:layout_height">@dimen/abn_si_numeric_pad_height</item>
+    </style>
+
+    <style name="AbnSi.PinPad.Button.Text">
+        <item name="android:textSize">@dimen/abn_si_font_size_small</item>
+        <item name="android:textColor">@color/abn_si_pinpad_button_text</item>
+        <item name="android:layout_marginTop">@dimen/abn_si_spacing_small_x</item>
+    </style>
+
+</resources>

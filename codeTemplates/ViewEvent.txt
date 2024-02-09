@@ -1,0 +1,12 @@
+package com.mortitech.blueprint.template.ui.feature.{{className}}
+
+import com.mortitech.blueprint.foundation.architecture.mvi.ViewEvent
+
+/**
+ * View events which can be sent from ViewModel to View as one-time events.
+ */
+sealed class {{ClassName}}ViewEvent : ViewEvent {
+    data class ShowError(val message: String) : {{ClassName}}ViewEvent()
+    data object Success : {{ClassName}}ViewEvent()
+    // Add the rest of the view events based on your screen needs
+}

@@ -1,0 +1,32 @@
+package com.mortitech.blueprint.network.dto
+
+import com.mortitech.blueprint.model.{{ClassName}}
+import com.google.gson.annotations.SerializedName
+
+/**
+ * Data transfer object for the {{ClassName}} entity.
+ */
+data class {{ClassName}}Dto(
+    // Assuming similar fields as the domain model, but they can be adapted for network transport
+    {{DtoFields}}
+) {
+    /**
+     * Converts this DTO to its corresponding domain model.
+     *
+     * @return The domain model equivalent of this DTO.
+     */
+    fun toDomainModel(): {{ClassName}} {
+        return {{ClassName}}(
+            {{MapDtoFieldsToDomainFields}}
+        )
+    }
+
+    companion object {
+        // Convert the domain model to the DTO
+        fun from{{ClassName}}(model: {{ClassName}}): {{ClassName}}Dto {
+            return {{ClassName}}Dto(
+                 {{MapDomainFieldsToDtoFields}}
+            )
+        }
+    }
+}

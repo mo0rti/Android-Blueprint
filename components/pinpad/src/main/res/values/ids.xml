@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="icAbnTechPinPadButton" />
+    <item type="id" name="tvAbnTechPinPadButton" />
+
+    <item type="id" name="tvAbnTechPinNumber1" />
+    <item type="id" name="tvAbnTechPinNumber2" />
+    <item type="id" name="tvAbnTechPinNumber3" />
+    <item type="id" name="tvAbnTechPinNumber4" />
+    <item type="id" name="tvAbnTechPinNumber5" />
+    <item type="id" name="tvAbnTechPinNumber6" />
+
+    <item type="id" name="tvPinNumber1" />
+    <item type="id" name="tvPinNumber2" />
+    <item type="id" name="tvPinNumber3" />
+    <item type="id" name="tvPinNumber4" />
+    <item type="id" name="tvPinNumber5" />
+    <item type="id" name="tvPinNumber6" />
+
+    <item type="id" name="AbnTechBinPad" />
+    <item type="id" name="AbnTechBinView" />
+
+    <item type="id" name="btnAbnTechPin1" />
+    <item type="id" name="btnAbnTechPin2" />
+    <item type="id" name="btnAbnTechPin3" />
+    <item type="id" name="btnAbnTechPin4" />
+    <item type="id" name="btnAbnTechPin5" />
+    <item type="id" name="btnAbnTechPin6" />
+    <item type="id" name="btnAbnTechPin7" />
+    <item type="id" name="btnAbnTechPin8" />
+    <item type="id" name="btnAbnTechPin9" />
+    <item type="id" name="btnAbnTechPin0" />
+    <item type="id" name="btnAbnTechPinDel" />
+    <item type="id" name="btnAbnTechPinBio" />
+
+    <item type="id" name="vAbnTechBtnEmptySpace" />
+
+</resources>
