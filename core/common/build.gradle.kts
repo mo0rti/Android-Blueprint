@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":foundation"))
+    implementation(projects.foundation)
 
     implementation(libs.kotlinx.coroutines.android)
     /*

@@ -13,7 +13,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":components:pinpad"))
+    implementation(projects.components.pinpad)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

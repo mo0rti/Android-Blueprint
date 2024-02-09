@@ -15,10 +15,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":foundation"))
-    implementation(project(":core:common"))
-    implementation(project(":core:model"))
-    implementation(project(":core:network"))
+    implementation(projects.foundation)
+    implementation(projects.core.common)
+    implementation(projects.core.model)
+    implementation(projects.core.network)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)

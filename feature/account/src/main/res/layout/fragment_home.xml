@@ -19,8 +19,9 @@
         <ImageView
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:tint="@color/cardview_dark_background"
-            android:src="@drawable/ic_dashboard_black_24dp" />
+            android:src="@drawable/ic_dashboard_black_24dp"
+            app:tint="@color/cardview_dark_background"
+            android:contentDescription="@string/appbar_scrolling_view_behavior" />
 
         <TextView
             android:id="@+id/text_home"

@@ -4,6 +4,7 @@ import com.mortitech.blueprint.configurePrintApksTask
 import com.mortitech.blueprint.disableUnnecessaryAndroidTests
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
+import com.mortitech.blueprint.AppBuildType
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -19,13 +20,28 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
 
             extensions.configure<LibraryExtension> {
+                // Configure Kotlin for Android
                 configureKotlinAndroid(this)
+
+                // Set default config options
                 defaultConfig.targetSdk = 34
 
-                /* TODO: Ignore flavour for now
+                // Configure product flavors if any
+                /*
                 configureFlavors(this)
                 */
+
+                // Configure managed devices for testing
                 configureGradleManagedDevices(this)
+
+                // Define the 'acceptance' build type
+                buildTypes {
+                    create("acceptance") {
+                        initWith(getByName("release"))
+                        signingConfig = signingConfigs.getByName("debug")
+                        isMinifyEnabled = true
+                    }
+                }
             }
             extensions.configure<LibraryAndroidComponentsExtension> {
                 configurePrintApksTask(this)

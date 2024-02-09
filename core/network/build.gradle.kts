@@ -22,9 +22,9 @@ secrets {
 }
 
 dependencies {
-    implementation(project(":foundation"))
-    implementation(project(":core:common"))
-    implementation(project(":core:model"))
+    implementation(projects.foundation)
+    implementation(projects.core.common)
+    implementation(projects.core.model)
 
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.svg)

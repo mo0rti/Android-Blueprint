@@ -9,8 +9,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":foundation"))
-    implementation(project(":core:common"))
+    implementation(projects.foundation)
+    implementation(projects.core.common)
 
     implementation(libs.hilt.android)
     implementation(libs.kotlinx.coroutines.android)

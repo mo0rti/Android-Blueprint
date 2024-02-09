@@ -72,21 +72,20 @@ android {
 }
 
 dependencies {
-    implementation(project(":foundation"))
-    implementation(project(":components:pinpad"))
-    implementation(project(":core:common"))
-    implementation(project(":core:data"))
-    implementation(project(":core:model"))
-    implementation(project(":core:domain"))
-    implementation(project(":core:navigation"))
+    implementation(projects.foundation)
+    implementation(projects.components.pinpad)
+    implementation(projects.core.common)
+    implementation(projects.core.data)
+    implementation(projects.core.model)
+    implementation(projects.core.domain)
+    implementation(projects.core.navigation)
 
-    implementation(project(":feature:auth-email"))
-    implementation(project(":feature:auth-pin"))
-    implementation(project(":feature:account"))
-
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(projects.feature.authEmail)
+    implementation(projects.feature.authPin)
+    implementation(projects.feature.account)
 
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.fragment.ktx)

@@ -13,8 +13,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":foundation"))
-    implementation(project(":core:model"))
+    implementation(projects.foundation)
+    implementation(projects.core.model)
 
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.datetime)
