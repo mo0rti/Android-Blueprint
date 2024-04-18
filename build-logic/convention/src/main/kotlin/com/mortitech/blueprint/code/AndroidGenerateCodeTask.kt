@@ -13,6 +13,7 @@ abstract class AndroidGenerateCodeTask : DefaultTask() {
     @Input
     val classNameToGenerate: String? = project.findProperty("className") as String?
 
+
     @TaskAction
     fun generate() {
         println("Generating code for $classNameToGenerate")
@@ -22,7 +23,7 @@ abstract class AndroidGenerateCodeTask : DefaultTask() {
         val dataPath = "core/data/src/main/java/com/mortitech/blueprint/data"
         val databasePath = "core/database/src/main/java/com/mortitech/blueprint/database"
         val networkPath = "core/network/src/main/java/com/mortitech/blueprint/network"
-        val featureBasePath = "app/src/main/java/com/mortitech/blueprint/template/ui"
+        val featureBasePath = "app/src/main/java/com/mortitech/blueprint/app/ui"
 
         val templatesDir = File("codeTemplates")
 

@@ -1,4 +1,4 @@
-package com.mortitech.blueprint.template.ui.feature.{{className}}
+package com.mortitech.blueprint.app.ui.{{className}}
 
 import androidx.lifecycle.viewModelScope
 import com.mortitech.blueprint.model.{{ClassName}}

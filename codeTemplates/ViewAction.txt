@@ -1,4 +1,4 @@
-package com.mortitech.blueprint.template.ui.feature.{{className}}
+package com.mortitech.blueprint.app.ui.{{className}}
 
 import com.mortitech.blueprint.foundation.architecture.mvi.ViewAction
 
